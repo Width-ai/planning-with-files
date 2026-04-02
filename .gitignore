@@ -27,6 +27,9 @@ clawdhub-publish/
 # Claude session files
 .claude/
 
+# Environment files
+.env
+
 # Keep the skill folder clean
 *.log
 *.tmp

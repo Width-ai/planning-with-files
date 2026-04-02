@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# docker-compose.yml – Planning With Files API
+# ---------------------------------------------------------------------------
+# Usage:
+#   docker compose up --build
+#
+# Requires ANTHROPIC_API_KEY to be set in the host environment (or in a .env
+# file in this directory).
+# ---------------------------------------------------------------------------
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+    volumes:
+      - ./matheson_deposition_pages:/data/matheson_deposition_pages
+    restart: unless-stopped
